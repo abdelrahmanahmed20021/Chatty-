@@ -1,5 +1,5 @@
-import Express from 'express';
-import jwt from 'jsonwebtoken';
+import Express from "express";
+import jwt from "jsonwebtoken";
 
 export const generateToken = async (
   req: Express.Request,
@@ -12,7 +12,7 @@ export const generateToken = async (
     process.env.JWT_SECRET!,
     {
       algorithm: "HS256",
-      expiresIn: "3m",
+      expiresIn: "1d",
     }
   );
   req.body.token = token;

@@ -1,8 +1,8 @@
-import bcrypt from 'bcrypt';
-import Express from 'express';
-import validator from 'validator';
+import bcrypt from "bcrypt";
+import Express from "express";
+import validator from "validator";
 
-import prisma from '../../../db';
+import prisma from "../../../db";
 
 export const checkExistUser = async (
   req: Express.Request,

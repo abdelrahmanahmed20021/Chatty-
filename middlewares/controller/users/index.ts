@@ -1,6 +1,6 @@
-import Express from 'express';
+import Express from "express";
 
-import prisma from '../../../db';
+import prisma from "../../../db";
 
 export const getUsers = async (
   req: Express.Request,

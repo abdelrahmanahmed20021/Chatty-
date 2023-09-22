@@ -1,9 +1,9 @@
-import bcrypt from 'bcrypt';
-import Express from 'express';
-import jwt from 'jsonwebtoken';
-import validator from 'validator';
+import bcrypt from "bcrypt";
+import Express from "express";
+import jwt from "jsonwebtoken";
+import validator from "validator";
 
-import prisma from '../../../db';
+import prisma from "../../../db";
 
 export const Signin = async (
   req: Express.Request,
