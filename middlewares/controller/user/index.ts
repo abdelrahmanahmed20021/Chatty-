@@ -82,7 +82,10 @@ export const getUser = async (
     res.send_badGateway("Invalid ID");
     return;
   }
-  const user = await prisma.user.findMany({ where: { id } });
+  const user = await prisma.user.findMany({
+    where: { id },
+    select: { id: true, email: true, name: true, password: false },
+  });
   if (user.length) {
     res.send_accepted("user", user);
     return;
