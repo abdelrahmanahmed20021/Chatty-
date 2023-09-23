@@ -21,7 +21,20 @@ export const Signin = async (
       token: body.token,
     },
   });
-
+  res.cookie(
+    "token",
+    {
+      token: req.body.token,
+      data: {
+        email: body.email,
+        name: body.name,
+      },
+    },
+    {
+      httpOnly: true,
+      maxAge: 24 * 60 * 60,
+    }
+  );
   res.send_created("Email created  successfully", user);
 };
 
@@ -39,6 +52,20 @@ export const Loginin = async (
     },
   });
 
+  res.cookie(
+    "token",
+    {
+      token: req.body.token,
+      data: {
+        email: user.email,
+        name: user.name,
+      },
+    },
+    {
+      httpOnly: true,
+      maxAge: 24 * 60 * 60,
+    }
+  );
   res.send_accepted("Login in done successfully", user);
 };
 
